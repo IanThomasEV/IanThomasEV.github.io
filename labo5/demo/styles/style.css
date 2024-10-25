@@ -1,0 +1,24 @@
+h1,h2{
+    color: green;
+    font-size:2em;
+}
+body {
+    margin: 0px;
+}
+
+.styleBlue{
+    color:blue;
+}
+.styleYellow{
+    color:yellow;
+}
+.styleRed{
+    color:orangered;
+}
+#menu{
+    color:olivedrab;
+}
+
+section>h1{
+    color:green;
+}
