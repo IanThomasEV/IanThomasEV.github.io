@@ -23,6 +23,8 @@ header{
 
 body{
     font-family: Helvetica;
+    margin:0;
+    padding:0;
 }
 h1{
     font-size: 80px;
