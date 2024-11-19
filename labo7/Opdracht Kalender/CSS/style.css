@@ -1,0 +1,36 @@
+td.weekend{
+    background-color: rgb(255, 220, 220);
+}
+
+td.weekend:first-child{
+    font-size: 1.1em;
+    color: gray;
+
+}
+
+td.weekend-last-child{
+    font-size: 0.9em;
+}
+td.vandaag{
+    background-color: rgb(250,120,120);
+}
+td.event{
+    text-decoration-line: underline;
+    color: blue;
+}
+td.andereMaand{
+    background-color: grey;
+}
+caption{
+    background-color: royalblue;
+}
+thead{
+    background-color: rgb(35,37,70);
+    color: rgb(200,190,240);
+}
+table{
+    border: 1px solid black
+}
+td{
+    border: 0.5px solid black;
+}
