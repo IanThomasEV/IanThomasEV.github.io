@@ -1,0 +1,8 @@
+p{
+    display:inline-block;
+    border: 1px solid black;
+    width: calc(50% - 20px);
+    padding: 10px;
+    box-sizing:border-box;
+    margin: 10px;
+}
