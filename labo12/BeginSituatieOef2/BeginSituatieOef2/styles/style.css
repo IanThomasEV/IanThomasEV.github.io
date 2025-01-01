@@ -6,5 +6,59 @@ html {
 * {
     padding: 10px;
 }
+a{
+    font-size: 1em;
+}
+
+header,footer{
+    background-color: #ddaa00;
+
+}
+
+header a, footer a{
+    color: #ddaa00;
+}
+
+nav{
+    background-color: grey;
+}
 
 
+@media screen and (min-width: 700px){
+    body{
+
+    }
+    main{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 700px){
+    body{
+
+
+    }
+
+}
+canvas{
+    background-color: #333;
+}
+
+section{
+    margin: 5px;
+    background-color: white;
+}
+nav a{
+    margin: 0px 5px;
+    border: 1px #ccc;
+}
+h1{
+    margin: 0px;
+}
+body{
+    margin: 5px;
+}
+section a{
+    border: 1px #333;
+}
