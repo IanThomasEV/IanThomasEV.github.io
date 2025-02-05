@@ -1,4 +1,4 @@
-<h1 align="center">--> Ian-Thomas E.</h1>
+<h1 align="center">Ian-Thomas E.</h1>
 <h3 align="center">Student VIVES Kortrijk - TI</h3>
 
 <h3 align="left">Connect with me:</h3>
