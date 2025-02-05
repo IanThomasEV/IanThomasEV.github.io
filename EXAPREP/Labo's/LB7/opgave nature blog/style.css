@@ -1,0 +1,38 @@
+body{
+    width: 95%;
+margin: 0px auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+section >header{
+    background-image: url(header.jpg);
+    background-size: cover;
+    height: 100px;
+}
+section > header > h1{
+    font-size: 2em;
+    color: white;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+nav{
+    background-color: dimgray;
+
+    font-weight: bold;
+}
+nav a{
+    color: limegreen;
+    font-size: 0.8em;
+   margin: 10px;
+    text-decoration: none;
+}
+article{
+    background-color: lightgray;
+    margin: 5px;
+    padding: 5px;
+
+}
+article h1{
+    text-decoration: underline;
+    font-size: 1.2em;
+    padding-top: 20px;
+}

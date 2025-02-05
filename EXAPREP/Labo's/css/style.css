@@ -1,0 +1,16 @@
+hr{
+    margin: auto;
+    width: 100%;
+}
+body{
+    margin: 0px;
+}
+
+.voorbeeld .belangrijk {
+    background-color: green;
+}
+
+.voorbeeld.belangrijk {
+    background-color: red;
+    font-size: 100px;
+}

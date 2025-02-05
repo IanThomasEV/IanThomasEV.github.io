@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opdracht 4</title>
+    <style>
+body{
+    font-family: Verdana, Helvetica, Arial,serif;
+    font-size: 1.1em;
+    background-color: silver;
+    color: darkblue;
+}
+h1{
+    font-variant: all-small-caps;
+    color: darkred;
+}
+a:hover{
+border: 1px solid white;
+}
+.stippeltjesrand{
+    border: 1px dotted red;
+}
+/* Dit is beter omdat je kan sizen, bij die andere met :before content is dat moeilijker
+
+Onthoud wel dat je 1em background-size moet gebruiken, dat is het beste
+*/
+a{
+    background-image: url("https://cdn-icons-png.flaticon.com/256/455/455691.png");
+    background-size: 1em;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+/*
+a:before{
+    content: url("https://cdn-icons-png.flaticon.com/256/455/455691.png");
+}
+ */
+
+    </style>
+</head>
+<body>
+<ul>
+    <li><a>HALLO</a></li>
+    <li><p>Dikzak</p></li>
+    <li><p>Goeiemorgen</p></li>
+</ul>
+<p class="stippeltjesrand">Morgen morgen morgen, goeiedag blij dat ik je weer onmoeten mag LVM</p>
+<a>Links of rechts, alles is weg</a>
+
+
+<ul>
+    <li>Boter</li>
+    <li>Kaas</li>
+    <li>Spruiten</li>
+</ul>
+</body>
+</html>

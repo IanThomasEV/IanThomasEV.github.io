@@ -1,0 +1,104 @@
+header{
+background-image: url('images/bgsky3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    position: relative;
+
+}
+header p{
+    text-align: center;
+    font-size: 240%;
+    font-weight: bold;
+    color: darkblue;
+/*    position: relative;
+    z-index: 2;
+Foto achter de tekst
+*/
+}
+ */
+header p:first-child{
+    font-size: 300%;
+    font-weight: bold;
+    font-style: italic;
+
+}
+body{
+    width: 95%;
+    margin: 0 auto;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+header img{
+    position: absolute;
+    right: 250px;
+    bottom: 60px;
+    /*
+    Foto achter de tekst
+    z-index: 1;
+    */
+}
+aside{
+    width: 25%;
+    float: right;
+    background-color: #dddddd;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+}
+aside p{
+    color: #666666;
+    font-size: 90%;
+    padding: 0 10px;
+}
+aside h3{
+    color: white;
+    background-color: blue;
+    text-align: center;
+    font-size: 120%;
+}
+main{
+    width: 75%;
+}
+.headertekst p{
+    padding-right: 30px;
+    overflow:hidden;
+}
+.headertekst img{
+    float: left;
+    margin: 20px;
+}
+.gallery{
+    float:left;
+    background-color: #999999;
+}
+.gallery .foto{
+    display:inline-block;
+    margin: 10px;
+    width: 180px;
+    height: 180px;
+    background-color:white;
+    padding: 10px;
+    border: 1px dotted white;
+}
+
+footer{
+    clear:both;
+    width:100%;
+    background-color:#666666;
+    color: white;
+    line-height: 2em;
+}
+footer div{
+    display:inline-block;
+    padding-left: 120px;
+}
+footer a{
+    color:white;
+}
+footer a:hover{
+    color:red;
+}
+#bottom{
+    text-align: center;
+}
