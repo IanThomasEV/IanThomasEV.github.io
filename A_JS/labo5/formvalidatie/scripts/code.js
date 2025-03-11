@@ -11,11 +11,14 @@ const valideer = () => {
     valideerAantalKinderen();
     isAllesJuist();
 };
+
+
 let voornaamJuist = false;
 let naamJuist = false;
 let emailJuist = false;
 let geboortedatumJuist = false;
 let aantalKinderenJuist = false;
+
 const valideerVoornaam = () => {
     let txtVoornaam = document.getElementById("voornaam");
     let errorVoornaam = document.getElementById("errorVoornaam");
@@ -116,12 +119,6 @@ const valideerAantalKinderen = () =>{
     let errorAantalKinderen = document.getElementById("errorAantalKinderen");
     let aantal = parseInt(aantalKinderen.value.trim());
 
-    /*if(!isGetal(aantal)){
-        aantalKinderen.className="error";
-        errorAantalKinderen.innerHTML = "geen getal";
-    }
-    else */
-    //dit leek nodig omdat je anders letters kuns opgeven, maar staat niet in de opgave.
     if(aantal < 0){
         aantalKinderen.className="error";
         errorAantalKinderen.innerHTML = "geen positief getal";
