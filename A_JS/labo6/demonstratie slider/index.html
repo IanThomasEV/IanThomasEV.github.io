@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Demonstratie slider</title>
+	<script type="text/javascript" charset="utf-8" src="scripts/code.js" defer></script>
+	<link rel="stylesheet" href="styles/styles.css"/>
+</head>
+<body>
+<section>
+	<p>Open het consolevenster, versleep daarna de sliders en bekijk de meldingen.</p>
+	<label class="label">Rood 50</label>
+	<input type="range" class="slider" value="50" min="0" max="255" />
+
+	<label class="label">Groen 50</label>
+	<input type="range" class="slider" value="50" min="0" max="255" />
+
+	<label class="label">Blauw 50</label>
+	<input type="range" class="slider" value="50" min="0" max="255" />
+</section>
+
+<button type="button" class="save">Save</button>
+
+	<div class="colorDemo"></div>
+
+	<div id="swatches"></div>
+
+</body>
+</html> 
