@@ -1,13 +1,8 @@
 const setup = () => {
-let button = document.getElementById('btnSubmit');
-button.addEventListener('click', start);
-initializeStart(localStorage.getItem("Storage"));
-
+    let button = document.getElementById('btnSubmit');
+    button.addEventListener('click', start);
+    initializeStart(localStorage.getItem("Storage"));
 }
-
-let global = {
-    Storage: [],
-};
 
 const start = () => {
     let input = document.getElementById('inpCommando').value;
@@ -17,25 +12,26 @@ const start = () => {
     if (!input.startsWith('/')) {
         console.log("invalid commando detected");
         window.alert("invalid commando detected");
+        return;
     }
-    if (input.charAt(1).toLocaleLowerCase() === "g") {
+    let commandPrefix = input.charAt(1).toLowerCase();
+    if (commandPrefix === "g") {
         console.log("Google commando detected");
         url = "https://www.google.com/search?q=";
-     createCardAppend("google", input.substring(3), textSubstring(url, input));
+        createCardAppend("Google", input.substring(3), textSubstring(url, input));
         windowOpen(textSubstring(url, input));
-    } else if (input.charAt(1).toLocaleLowerCase() === "t") {
+    } else if (commandPrefix === "t") {
         console.log("Twitter commando detected");
         url = "https://x.com/search?q=";
         createCardAppend("Twitter", input.substring(3), textSubstring(url, input));
         windowOpen(textSubstring(url, input));
-    } else if (input.charAt(1).toLocaleLowerCase() === "i") {
+    } else if (commandPrefix === "i") {
         console.log("Instagram commando detected");
-        url = "https://www.instagram.com/explore/tags/"
+        url = "https://www.instagram.com/explore/tags/";
         createCardAppend("Instagram", input.substring(3), textSubstring(url, input));
         windowOpen(textSubstring(url, input));
-    } else if (input.charAt(1).toLocaleLowerCase() === "y") {
+    } else if (commandPrefix === "y") {
         console.log("Youtube commando detected");
-
         url = "https://www.youtube.com/results?search_query=";
         createCardAppend("Youtube", input.substring(3), textSubstring(url, input));
         windowOpen(textSubstring(url, input));
@@ -52,11 +48,11 @@ const createCardAppend = (title, commandSuffix, url) => {
 
     let cardBody = createElementWithClassName("div", "card-body");
     let cardTitle = createElementWithClassNameAndText("h5", "card-title", title);
-    let cartText = createElementWithClassNameAndText("p", "card-text", commandSuffix);
+    let cardText = createElementWithClassNameAndText("p", "card-text", commandSuffix);
     let cardUrl = createButtonWithClassName(url);
     cardUrl.classList.add(title.toLowerCase() + "-btn");
     cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cartText);
+    cardBody.appendChild(cardText);
     cardBody.appendChild(cardUrl);
     card.appendChild(cardBody);
     col4.appendChild(card);
@@ -64,62 +60,63 @@ const createCardAppend = (title, commandSuffix, url) => {
     let row = document.querySelector("#resultContainer .row");
     row.appendChild(col4);
     saveToStorage();
-
 }
 
+const textSubstring = (url, text) => {
+    let value = text.substring(3).split(" ").join("+");
+    let okUrl = url + value;
+    return okUrl;
+}
 
-    const textSubstring = (url, text)=> {
-        let value = text.substring(3).split(" ").join("+");
-        let okUrl = url+value;
-        return okUrl;
-    }
-    const windowOpen = (okUrl) => {
-        window.open(okUrl, "_blank");
-    }
+const windowOpen = (okUrl) => {
+    window.open(okUrl, "_blank");
+}
 
-    const createElementWithClassName = (element, clasName) =>{
-        let e = document.createElement(element);
-        e.setAttribute("class", clasName);
-        return e;
-    };
+const createElementWithClassName = (element, className) => {
+    let e = document.createElement(element);
+    e.setAttribute("class", className);
+    return e;
+}
 
-    const createButtonWithClassName = (url) => {
-      let linkGo = document.createElement("a");
-      linkGo.setAttribute("href", url);
-      linkGo.setAttribute("target", "_blank");
-      linkGo.setAttribute("class", "btn btn-primary");
-      linkGo.appendChild(document.createTextNode("Go!"));
-      return linkGo;
-    }
-    const createElementWithClassNameAndText = (element, className, text) => {
-        let e = document.createElement(element, className);
-        e.appendChild(document.createTextNode(text));
-        return e;
-    }
-        const saveToStorage = () => {
-            global.Storage = [];
-            let childs = document.getElementsByClassName('card');
-            for(let i = 0; i < childs.length; i++){
-                let type = childs[i].querySelector("h5").innerText;
-                let link = childs[i].querySelector("a").getAttribute("href");
-                let text = childs[i].querySelector("p").innerText;
-                let info = [];
-                info.push(type);
-                info.push(text);
-                info.push(link);
-                global.Storage.push(info);
+const createButtonWithClassName = (url) => {
+    let linkGo = document.createElement("a");
+    linkGo.setAttribute("href", url);
+    linkGo.setAttribute("target", "_blank");
+    linkGo.setAttribute("class", "btn btn-primary");
+    linkGo.appendChild(document.createTextNode("Go!"));
+    return linkGo;
+}
 
-            }
-            let string = JSON.stringify(global.Storage);
-            localStorage.setItem("Storage", string);
+const createElementWithClassNameAndText = (element, className, text) => {
+    let e = document.createElement(element);
+    e.setAttribute("class", className);
+    e.appendChild(document.createTextNode(text));
+    return e;
+}
+
+const saveToStorage = () => {
+    let global = { Storage: [] };
+    let cards = [];
+    let childs = document.getElementsByClassName('card');
+    for (let i = 0; i < childs.length; i++) {
+        let type = childs[i].querySelector("h5").innerText;
+        let link = childs[i].querySelector("a").getAttribute("href");
+        let text = childs[i].querySelector("p").innerText;
+        cards.push({ type, text, link });
+    }
+    global.Storage = cards;
+    let string = JSON.stringify(global.Storage);
+    localStorage.setItem("Storage", string);
+}
+
+const initializeStart = (start) => {
+    let arrayToPush = JSON.parse(start);
+    if (arrayToPush !== null) {
+        for (let i = 0; i < arrayToPush.length; i++) {
+            let card = arrayToPush[i];
+            createCardAppend(card.type, card.text, card.link);
         }
-
-        const initializeStart = (start) =>{
-            let arrayToPush = JSON.parse(start);
-            if(arrayToPush !== null){
-                for(let i = 0; i < arrayToPush.length; i++) {
-                    createCardAppend(arrayToPush[i][0], arrayToPush[i][1], arrayToPush[i][2]);
-                }
-            }
+    }
 }
+
 window.addEventListener("load", setup);

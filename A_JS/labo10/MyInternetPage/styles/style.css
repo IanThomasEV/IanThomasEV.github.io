@@ -40,3 +40,7 @@ background-color: dodgerblue;
     font-weight: bold;
     border-color: #450202;
 }
+.hoover:hover {
+    background-color: white;
+    color: darkred;
+}
