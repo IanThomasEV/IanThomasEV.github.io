@@ -1,0 +1,21 @@
+table{
+    background-color: darkred;
+    border: 1px solid darkred;
+    color: white;
+    margin: 25px;
+    width: 300px;
+}
+thead{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+tr:nth-child(even){
+    background-color: white;
+    color: black;
+}
+*{
+    font-family: "JetBrains Mono ExtraBold", sans-serif;
+}
+#output table{
+    display:inline-block;
+}
