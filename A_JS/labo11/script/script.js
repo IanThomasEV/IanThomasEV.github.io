@@ -149,11 +149,10 @@ const unlikeWithParameter = (button) => {
     console.log("Button" + button);
     const likeButton = button;
     const index = likeButtons.indexOf(likeButton);
-    const movieTitle = movies[index].title; // ✅ NIEUW: titel ophalen
-
+    const movieTitle = movies[index].title;
     likeButton.addEventListener("click", movieLike);
     likeButton.style.color = "black";
-    likeButton.removeEventListener("click", movieUnlike); // ✅ verplaatst naar hier voor logica-orde
+    likeButton.removeEventListener("click", movieUnlike);
 
     const unLikeButton = unlikeButtons[index];
     unLikeButton.addEventListener("click", movieDisLike);
@@ -163,7 +162,6 @@ const unlikeWithParameter = (button) => {
     number -= 1;
     like.innerText = number;
 
-    // ✅ ✅ TOEGEVOEGD: verwijder titel uit likedMovies
     const i = likedMovies.indexOf(movieTitle);
     if (i !== -1) {
         likedMovies.splice(i, 1);

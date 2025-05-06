@@ -75,7 +75,6 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
 .description {
 	grid-area: description;
-	
 	margin: 0px 0px;
 	padding: 0px 20px;
 }
